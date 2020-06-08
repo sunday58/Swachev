@@ -1,4 +1,4 @@
-package com.swachev.ui.dashboard
+package com.swachev.ui.foryou
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.swachev.R
 
-class DashboardFragment : Fragment() {
+class ForYouFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var categoryViewModel: ForYouViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        categoryViewModel =
+                ViewModelProviders.of(this).get(ForYouViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_category, container, false)
         val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        categoryViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
