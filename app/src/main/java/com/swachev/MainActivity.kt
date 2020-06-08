@@ -3,6 +3,7 @@ package com.swachev
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -10,17 +11,46 @@ import androidx.navigation.ui.setupWithNavController
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var navView: BottomNavigationView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+         navView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.navigation_favorite, R.id.navigation_foryou, R.id.navigation_yourList))
+                R.id.navigation_favorite, R.id.navigation_foryou, R.id.navigation_yourList,
+        R.id.navigation_profile))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        setClickListener()
+    }
+
+    //listener for bottom navigation
+   private fun setClickListener(){
+        navView.setOnNavigationItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.navigation_category -> {
+                    hideBottomNav()
+                    return@setOnNavigationItemSelectedListener true
+                }
+
+            }
+            false
+
+        }
+
+    }
+
+    fun hideBottomNav() {
+        navView.isVisible = false
+    }
+
+    fun showBottomNav() {
+        navView.isVisible = true
     }
 }

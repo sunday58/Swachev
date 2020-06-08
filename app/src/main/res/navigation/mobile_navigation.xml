@@ -3,29 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_foryou">
+    app:startDestination="@+id/navigation_category">
 
     <fragment
         android:id="@+id/navigation_favorite"
         android:name="com.swachev.ui.favorite.FavoriteFragment"
         android:label="@string/title_favorite"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_favorite" />
 
     <fragment
         android:id="@+id/navigation_foryou"
         android:name="com.swachev.ui.foryou.ForYouFragment"
         android:label="@string/title_foryou"
-        tools:layout="@layout/fragment_category" />
+        tools:layout="@layout/fragment_foryou" />
 
     <fragment
         android:id="@+id/navigation_yourList"
         android:name="com.swachev.ui.yourList.YourListFragment"
         android:label="@string/title_yourList"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_your_list" />
 
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.swachev.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/profile_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_category"
+        android:name="com.swachev.ui.category.CategoryFragment"
+        tools:layout="@layout/fragment_category" />
 </navigation>
