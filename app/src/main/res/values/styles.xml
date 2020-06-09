@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
@@ -13,5 +13,29 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 
 </style>
+
+
+    //for edit text
+    <style name="ErrorText" parent="TextAppearance.Design.Error">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+    <style name="EditTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="errorTextAppearance">@style/ErrorText</item>
+        <item name="android:strokeColor" tools:targetApi="lollipop">@android:color/transparent</item>
+    </style>
+
+    //for buttons
+    <style name="MyButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">@style/MyShapeAppearance</item>
+    </style>
+    <style name="MyShapeAppearance" parent="">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSize">35dp</item>
+    </style>
 
 </resources>
