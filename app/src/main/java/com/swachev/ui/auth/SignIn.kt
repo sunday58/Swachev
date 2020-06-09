@@ -6,10 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.navigation.Navigation
 
 import com.swachev.R
 
 class SignIn : Fragment() {
+
+    private lateinit var signUp: TextView
 
     companion object {
         fun newInstance() = SignIn()
@@ -21,7 +25,13 @@ class SignIn : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.sign_in_fragment, container, false)
+        val root = inflater.inflate(R.layout.sign_in_fragment, container, false)
+
+        signUp = root.findViewById(R.id.sign_up)
+        signUp.setOnClickListener {
+            Navigation.findNavController(root).navigate(R.id.action_navigation_signIn_to_navigation_register)
+        }
+        return root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

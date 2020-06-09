@@ -41,5 +41,14 @@
     <fragment
         android:id="@+id/navigation_signIn"
         android:name="com.swachev.ui.auth.SignIn"
-        tools:layout="@layout/sign_in_fragment" />
+        tools:layout="@layout/sign_in_fragment" >
+        <action
+            android:id="@+id/action_navigation_signIn_to_navigation_register"
+            app:destination="@id/navigation_register" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="com.swachev.ui.auth.RegisterFragment"
+        tools:layout="@layout/register_fragment" />
 </navigation>
