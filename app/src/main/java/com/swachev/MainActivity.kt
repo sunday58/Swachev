@@ -4,6 +4,8 @@ import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -12,13 +14,14 @@ import androidx.navigation.ui.setupWithNavController
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navView: BottomNavigationView
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
          navView = findViewById(R.id.nav_view)
 
-        val navController = findNavController(R.id.nav_host_fragment)
+         navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(setOf(
@@ -32,25 +35,30 @@ class MainActivity : AppCompatActivity() {
 
     //listener for bottom navigation
    private fun setClickListener(){
-        navView.setOnNavigationItemSelectedListener { item ->
-            when(item.itemId) {
-                R.id.navigation_category -> {
-                    hideBottomNav()
-                    return@setOnNavigationItemSelectedListener true
-                }
-
+        navController.addOnDestinationChangedListener { _, item: NavDestination, _ ->
+            if (item.id == R.id.navigation_category) {
+                hideBottomNav()
+                hideToolBar()
+            }else {
+                showBottomNav()
+                showToolBar()
             }
-            false
-
         }
 
     }
 
-    fun hideBottomNav() {
+   private fun hideBottomNav() {
         navView.isVisible = false
     }
 
-    fun showBottomNav() {
+   private fun showBottomNav() {
         navView.isVisible = true
+    }
+   private fun hideToolBar(){
+        supportActionBar!!.hide()
+    }
+
+   private fun showToolBar(){
+        supportActionBar!!.show()
     }
 }

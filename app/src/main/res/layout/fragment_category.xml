@@ -1,10 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.category.CategoryFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.category.CategoryFragment"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/i_am_a"
+        android:textSize="18sp"
+        android:layout_gravity="start"
+        android:layout_marginStart="49dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/shopper"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        app:cardElevation="8dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="8dp"
+        android:clickable="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="49dp"
+        android:focusable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@string/shopper"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_gravity="center"/>
 
 
+    </com.google.android.material.card.MaterialCardView>
 
-</FrameLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/business_owner"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        app:cardElevation="8dp"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="49dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@string/business_owner"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
