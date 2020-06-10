@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
-    android:overScrollMode="never"
+    android:overScrollMode="ifContentScrolls"
+    android:scrollbarStyle="outsideOverlay"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 

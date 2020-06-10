@@ -19,5 +19,11 @@
     <string name="next">Next</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="signup">SignUp</string>
+    <string name="addresss">Address</string>
+    <string name="apt_or_suite">Apt. or Suite #</string>
+    <string name="city">City</string>
+    <string name="zip_code">Zip Code</string>
+    <string name="country">Country</string>
+    <string name="payment_methods">Payment Methods</string>
 
 </resources>

@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
 
 import com.google.android.material.button.MaterialButton
 
@@ -40,8 +41,7 @@ class RegisterFragment : Fragment() {
 
         register = root.findViewById(R.id.register_button)
         register.setOnClickListener {
-
-
+        Navigation.findNavController(root).navigate(R.id.action_navigation_register_to_navigation_registerNext)
         }
         return root
     }

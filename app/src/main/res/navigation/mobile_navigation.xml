@@ -50,5 +50,23 @@
     <fragment
         android:id="@+id/navigation_register"
         android:name="com.swachev.ui.auth.RegisterFragment"
-        tools:layout="@layout/register_fragment" />
+        tools:layout="@layout/register_fragment" >
+        <action
+            android:id="@+id/action_navigation_register_to_navigation_registerNext"
+            app:destination="@id/navigation_registerNext" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_registerNext"
+        android:name="com.swachev.ui.auth.RegisterNext"
+        tools:layout="@layout/register_next_fragment" >
+        <action
+            android:id="@+id/action_navigation_registerNext_to_navigation_registerFinish"
+            app:destination="@id/navigation_registerFinish" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_registerFinish"
+        android:name="com.swachev.ui.auth.RegisterFinish"
+        tools:layout="@layout/register_finish_fragment" />
 </navigation>

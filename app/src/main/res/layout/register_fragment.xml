@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
-    android:overScrollMode="never"
+    android:overScrollMode="ifContentScrolls"
+    android:scrollbarStyle="outsideOverlay"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -21,14 +22,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:layout_marginBottom="16dp"
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_gravity="center"
+            android:layout_gravity="center_horizontal"
             tools:src="@drawable/profile"
             android:layout_marginBottom="16dp" />
 
@@ -66,6 +67,7 @@
             android:inputType="textPersonName"
             android:id="@+id/register_fullName"
             android:hint="@string/full_name"
+            android:drawablePadding="8dp"
             android:drawableStart="@drawable/ic_person"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -96,6 +98,7 @@
             android:inputType="textPersonName"
             android:id="@+id/register_userName"
             android:hint="@string/user_name"
+            android:drawablePadding="8dp"
             android:drawableStart="@drawable/ic_person"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -126,6 +129,7 @@
             android:inputType="textEmailAddress"
             android:id="@+id/register_email"
             android:hint="@string/email"
+            android:drawablePadding="8dp"
             android:drawableStart="@drawable/ic_email"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -157,6 +161,7 @@
             android:inputType="textPhonetic"
             android:id="@+id/register_phone"
             android:hint="@string/email"
+            android:drawablePadding="8dp"
             android:drawableStart="@drawable/ic_call"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -191,6 +196,7 @@
             android:inputType="textPassword"
             android:id="@+id/register_password"
             android:hint="@string/password"
+            android:drawablePadding="8dp"
             android:drawableStart="@drawable/ic_lock"/>
 
     </com.google.android.material.textfield.TextInputLayout>

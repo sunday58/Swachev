@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
    private fun setClickListener(){
         navController.addOnDestinationChangedListener { _, item: NavDestination, _ ->
             if (item.id == R.id.navigation_category || item.id == R.id.navigation_signIn
-                ||item.id == R.id.navigation_register) {
+                ||item.id == R.id.navigation_register ||item.id == R.id.navigation_registerNext) {
                 hideBottomNav()
                 hideToolBar()
             }else {
