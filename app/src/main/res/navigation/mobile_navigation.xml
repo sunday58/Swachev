@@ -68,5 +68,10 @@
     <fragment
         android:id="@+id/navigation_registerFinish"
         android:name="com.swachev.ui.auth.RegisterFinish"
-        tools:layout="@layout/register_finish_fragment" />
+        tools:layout="@layout/register_finish_fragment" >
+        <action
+            android:id="@+id/action_navigation_registerFinish_to_navigation_foryou"
+            app:destination="@id/navigation_foryou" />
+    </fragment>
+
 </navigation>

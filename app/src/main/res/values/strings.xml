@@ -25,5 +25,7 @@
     <string name="zip_code">Zip Code</string>
     <string name="country">Country</string>
     <string name="payment_methods">Payment Methods</string>
+    <string name="skip_and_set_up_later">Skip and set up later</string>
+    <string name="let_s_start">Let\'s start!</string>
 
 </resources>

@@ -48,8 +48,8 @@
             android:layout_marginEnd="60dp"
             android:layout_marginRight="60dp"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/address_layout"
+        <FrameLayout
+            android:id="@+id/register_visa"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             app:hintEnabled="false"
@@ -64,23 +64,156 @@
             app:boxCornerRadiusTopStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
+            android:clickable="true"
+            android:focusable="true"
             app:boxCornerRadiusBottomEnd="10dp"
-            style="@style/EditTextInputLayoutStyle">
+           android:background="@drawable/edit_text_design">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:inputType="textPostalAddress"
-                android:id="@+id/register_address"/>
+                android:src="@drawable/ic_visa"
+                android:layout_gravity="center_horizontal"/>
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/register_masterCard"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:hintEnabled="false"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            app:errorEnabled="true"
+            app:boxStrokeColor="#00AFF0"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="8dp"
+            app:boxCornerRadiusBottomEnd="10dp"
+            android:background="@drawable/edit_text_design">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/master_card"
+                android:layout_gravity="center_horizontal"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/register_americanExpress"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:hintEnabled="false"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            app:errorEnabled="true"
+            app:boxStrokeColor="#00AFF0"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="8dp"
+            app:boxCornerRadiusBottomEnd="10dp"
+            android:background="@drawable/edit_text_design">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_american_express"
+                android:layout_gravity="center_horizontal"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/register_payPal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:hintEnabled="false"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            app:errorEnabled="true"
+            app:boxStrokeColor="#00AFF0"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="8dp"
+            app:boxCornerRadiusBottomEnd="10dp"
+            android:background="@drawable/edit_text_design">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_paypal"
+                android:layout_gravity="center_horizontal"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/register_applePay"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:hintEnabled="false"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            app:errorEnabled="true"
+            app:boxStrokeColor="#00AFF0"
+            app:boxStrokeWidth="2dp"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="8dp"
+            app:boxCornerRadiusBottomEnd="10dp"
+            android:background="@drawable/edit_text_design">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/apple_pay"
+                android:layout_gravity="center_horizontal"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/register_skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/skip_and_set_up_later"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/roboto"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true"/>
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/registerNext_button"
+            android:id="@+id/registerFinish_button"
             android:layout_width="match_parent"
             android:layout_height="52dp"
-            android:text="@string/next"
+            android:text="@string/let_s_start"
             android:textSize="16sp"
             android:fontFamily="@font/roboto"
             android:layout_marginTop="16dp"

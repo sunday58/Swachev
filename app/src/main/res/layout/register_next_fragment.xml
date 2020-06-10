@@ -98,27 +98,21 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginRight="60dp"
-            android:orientation="horizontal">
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/city_layout"
                 style="@style/EditTextInputLayoutStyle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 app:boxBackgroundColor="@color/white"
                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginRight="60dp"
                 app:boxStrokeColor="#00AFF0"
                 app:boxStrokeWidth="2dp"
                 app:errorEnabled="true"
@@ -129,7 +123,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_city"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:drawableStart="@drawable/ic_buildings"
                     android:drawablePadding="8dp"
@@ -142,11 +136,15 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/zipCode_layout"
                 style="@style/EditTextInputLayoutStyle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginStart="24dp"
                 android:gravity="end"
                 app:boxBackgroundColor="@color/white"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginRight="60dp"
                 app:boxCornerRadiusBottomEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
@@ -162,16 +160,15 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/register_zipCode"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:drawablePadding="8dp"
                     android:hint="@string/zip_code"
                     android:inputType="number"
+                    android:drawableStart="@drawable/ic_zip_code"
                     android:maxWidth="100dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/country_layout"
