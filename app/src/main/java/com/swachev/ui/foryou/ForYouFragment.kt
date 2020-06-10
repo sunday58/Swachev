@@ -22,10 +22,8 @@ class ForYouFragment : Fragment() {
         categoryViewModel =
                 ViewModelProviders.of(this).get(ForYouViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_foryou, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        categoryViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+
+
         return root
     }
 }
