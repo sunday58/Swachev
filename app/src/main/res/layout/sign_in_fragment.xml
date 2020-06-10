@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:overScrollMode="never"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -163,7 +166,7 @@
 
     <TextView
         android:id="@+id/sign_up"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/signup"
         android:fontFamily="@font/roboto"
@@ -172,6 +175,8 @@
         android:focusable="true"
         android:textColor="@color/colorPrimaryDark"
         android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="8dp"
         android:layout_marginTop="4dp"/>
 
 

@@ -5,6 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:overScrollMode="never"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -27,8 +30,7 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             tools:src="@drawable/profile"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginBottom="16dp" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -179,6 +181,7 @@
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusBottomEnd="10dp"
         app:passwordToggleEnabled="true"
+        android:layout_marginBottom="12dp"
         app:passwordToggleTint="@color/colorPrimaryDark"
         style="@style/EditTextInputLayoutStyle">
 
@@ -210,6 +213,7 @@
         android:clickable="true"
         android:focusable="true"
         app:cornerRadius="25dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/colorPrimaryDark"/>
 
 

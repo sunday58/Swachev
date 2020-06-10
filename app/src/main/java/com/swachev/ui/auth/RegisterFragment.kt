@@ -1,13 +1,23 @@
 package com.swachev.ui.auth
 
-import androidx.lifecycle.ViewModelProviders
+
+import android.annotation.SuppressLint
+
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+
 import android.view.View
 import android.view.ViewGroup
 
+import androidx.fragment.app.Fragment
+
+import androidx.lifecycle.ViewModelProviders
+
+import com.google.android.material.button.MaterialButton
+
 import com.swachev.R
+
+
 
 class RegisterFragment : Fragment() {
 
@@ -16,12 +26,24 @@ class RegisterFragment : Fragment() {
     }
 
     private lateinit var viewModel: RegisterViewModel
+    private lateinit var register: MaterialButton
 
+
+
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.register_fragment, container, false)
+        val root = inflater.inflate(R.layout.register_fragment, container, false)
+
+
+        register = root.findViewById(R.id.register_button)
+        register.setOnClickListener {
+
+
+        }
+        return root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -29,5 +51,6 @@ class RegisterFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(RegisterViewModel::class.java)
         // TODO: Use the ViewModel
     }
+
 
 }
