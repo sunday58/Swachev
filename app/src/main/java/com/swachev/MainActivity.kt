@@ -4,7 +4,6 @@ import android.content.DialogInterface
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -93,13 +92,13 @@ class MainActivity : AppCompatActivity() {
         dialog.setMessage("Are you sure you want to exit?")
             .setPositiveButton(
                 "YES"
-            ) { dialogInterface: DialogInterface, i: Int ->
+            ) { dialogInterface: DialogInterface, _: Int ->
                 dialogInterface.dismiss()
                 exitProcess(0)
             }
             .setNegativeButton(
                 "NO"
-            ) { dialogInterface: DialogInterface, i: Int -> dialogInterface.dismiss() }
+            ) { dialogInterface: DialogInterface, _: Int -> dialogInterface.dismiss() }
         dialog.create().show()
     }
 
