@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -12,6 +13,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlin.system.exitProcess
 
 
 class MainActivity : AppCompatActivity() {
@@ -78,18 +80,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        super.onBackPressed()
-
+        if (navController.currentDestination!!.id == R.id.navigation_foryou)
+            showDialog()
+        else
+            navController.navigate(R.id.navigation_foryou)
     }
 
     private fun showDialog() {
         val dialog = MaterialAlertDialogBuilder(this@MainActivity)
+        dialog.setTitle("Exiting?")
+        dialog.setIcon(R.drawable.ic_close_black_24dp)
         dialog.setMessage("Are you sure you want to exit?")
             .setPositiveButton(
                 "YES"
             ) { dialogInterface: DialogInterface, i: Int ->
                 dialogInterface.dismiss()
-                System.exit(0)
+                exitProcess(0)
             }
             .setNegativeButton(
                 "NO"
