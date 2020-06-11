@@ -7,7 +7,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/for_you_toolBar"
         android:layout_width="match_parent"
+        android:layout_marginBottom="4dp"
         android:layout_height="?attr/actionBarSize">
 
         <RelativeLayout
@@ -18,8 +20,9 @@
                 android:id="@+id/for_you_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
                 android:src="@drawable/ic_search"/>
 
 
@@ -28,11 +31,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Delhi, India"
-                android:fontFamily="@font/roboto"
-                android:textSize="18sp"
                 android:drawableStart="@drawable/ic_placeholder"
-                android:drawablePadding="8dp"/>
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/roboto"
+                android:paddingEnd="16dp"
+                android:text="Delhi, India" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/for_you_cart"
@@ -40,6 +43,8 @@
                 android:layout_height="wrap_content"
                 app:cardElevation="8dp"
                 android:layout_alignParentEnd="true"
+                android:clickable="true"
+                android:focusable="true"
                 app:cardBackgroundColor="@color/colorPrimaryDark"
                 app:cardCornerRadius="45dp"
                 android:layout_marginEnd="12dp">
@@ -52,10 +57,10 @@
                     android:text="0"
                     android:fontFamily="@font/roboto"
                     android:textStyle="bold"
-                    android:paddingStart="22dp"
-                    android:paddingEnd="22dp"
-                    android:paddingTop="12dp"
-                    android:paddingBottom="12dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
                     android:drawableStart="@drawable/ic_shopping_cart"
                     android:drawablePadding="8dp"
                     android:textSize="20sp"/>

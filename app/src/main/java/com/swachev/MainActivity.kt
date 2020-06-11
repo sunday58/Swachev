@@ -1,25 +1,31 @@
 package com.swachev
 
+import android.content.DialogInterface
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
-import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navView: BottomNavigationView
     private lateinit var navController: NavController
+    private lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
          navView = findViewById(R.id.nav_view)
+        toolbar = findViewById(R.id.default_toolBar)
+        setSupportActionBar(toolbar)
 
          navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
@@ -30,25 +36,74 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        setClickListener()
+        setDestinationListener()
     }
 
     //listener for bottom navigation
-   private fun setClickListener(){
-        navController.addOnDestinationChangedListener { _, item: NavDestination, _ ->
-            if (item.id == R.id.navigation_category || item.id == R.id.navigation_signIn
-                ||item.id == R.id.navigation_register ||item.id == R.id.navigation_registerNext
-                ||item.id == R.id.navigation_registerFinish) {
-                hideBottomNav()
-                hideToolBar()
-            }else if (item.id == R.id.navigation_foryou){
-                hideToolBar()
-            } else {
-                showBottomNav()
-                showToolBar()
+    private fun setDestinationListener() {
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            val dest = resources.getResourceName(destination.id)
+
+            when (destination.id) {
+                R.id.navigation_foryou -> {
+                    hideCustomToolBar()
+                    showBottomNav()
+                }
+                R.id.navigation_category -> {
+                    hideCustomToolBar()
+                    hideBottomNav()
+                }
+                R.id.navigation_register ->{
+                    hideCustomToolBar()
+                    hideBottomNav()
+                }
+                R.id.navigation_registerFinish ->{
+                    hideCustomToolBar()
+                    hideBottomNav()
+                }
+                R.id.navigation_registerNext ->{
+                    hideCustomToolBar()
+                    hideBottomNav()
+                }
+                R.id.navigation_signIn ->{
+                    hideCustomToolBar()
+                    hideBottomNav()
+                }
+                else ->{
+                    showCustomToolBar()
+                    showBottomNav()
+                }
             }
         }
+    }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+    }
+
+    private fun showDialog() {
+        val dialog = MaterialAlertDialogBuilder(this@MainActivity)
+        dialog.setMessage("Are you sure you want to exit?")
+            .setPositiveButton(
+                "YES"
+            ) { dialogInterface: DialogInterface, i: Int ->
+                dialogInterface.dismiss()
+                System.exit(0)
+            }
+            .setNegativeButton(
+                "NO"
+            ) { dialogInterface: DialogInterface, i: Int -> dialogInterface.dismiss() }
+        dialog.create().show()
+    }
+
+
+    private fun hideCustomToolBar() {
+        toolbar.isVisible = false
+    }
+
+    private fun showCustomToolBar() {
+        toolbar.isVisible = true
     }
 
    private fun hideBottomNav() {
@@ -58,11 +113,5 @@ class MainActivity : AppCompatActivity() {
    private fun showBottomNav() {
         navView.isVisible = true
     }
-   private fun hideToolBar(){
-        supportActionBar!!.hide()
-    }
 
-   private fun showToolBar(){
-        supportActionBar!!.show()
-    }
 }
