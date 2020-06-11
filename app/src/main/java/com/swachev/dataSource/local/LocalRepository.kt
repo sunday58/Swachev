@@ -5,6 +5,6 @@ import com.swachev.model.StoreItems
 
 interface LocalRepository {
 
-    fun getStoreItems(): LiveData<List<StoreItems?>>
-    suspend fun setStoreItems(response: List<StoreItems?>)
+    fun getStoreItems(): LiveData<StoreItems?>
+    suspend fun setStoreItems(response: StoreItems?)
 }

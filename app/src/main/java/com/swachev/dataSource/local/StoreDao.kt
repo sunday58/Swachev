@@ -12,8 +12,8 @@ import java.net.CacheResponse
 interface StoreDao {
 
     @Query("SELECT * FROM store_table")
-    fun getStoreItems(): LiveData<List<StoreItems?>>
+    fun getStoreItems(): LiveData<StoreItems?>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun setStoreItems(response: List<StoreItems?>)
+    suspend fun setStoreItems(response: StoreItems?)
 }
