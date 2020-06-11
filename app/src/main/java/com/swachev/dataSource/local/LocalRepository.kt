@@ -1,10 +1,10 @@
 package com.swachev.dataSource.local
 
 import androidx.lifecycle.LiveData
-import com.swachev.model.Content
+import com.swachev.model.StoreItems
 
 interface LocalRepository {
 
-    fun getStoreItems(): LiveData<List<Content>>
-    suspend fun setStoreItems(response: List<Content>)
+    fun getStoreItems(): LiveData<List<StoreItems?>>
+    suspend fun setStoreItems(response: List<StoreItems?>)
 }
