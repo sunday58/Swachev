@@ -1,19 +1,18 @@
 package com.swachev.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import androidx.room.TypeConverter
-import androidx.room.TypeConverters
+import androidx.room.*
 import java.io.Serializable
+
 
 @Entity(tableName = "store_table")
 data class Content(
     @PrimaryKey
+    @Embedded
     val address: Address,
     val category: String,
     val id: Int,
     val name: String,
-    @TypeConverters(TypeConverter::class)
+    @TypeConverters(StoreItemConverter::class)
     val products: List<Product>,
     val subCategory: String
 ):Serializable

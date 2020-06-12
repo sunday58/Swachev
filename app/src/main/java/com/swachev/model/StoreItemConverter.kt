@@ -18,4 +18,5 @@ class StoreItemConverter {
         val gson = Gson()
         return gson.toJson(list)
     }
+
 }

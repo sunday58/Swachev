@@ -1,11 +1,10 @@
 package com.swachev.model
 
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 import java.io.Serializable
-
 
 
 data class StoreItems(
