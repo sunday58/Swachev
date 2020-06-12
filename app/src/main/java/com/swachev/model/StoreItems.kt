@@ -7,10 +7,8 @@ import androidx.room.TypeConverters
 import java.io.Serializable
 
 
-@Entity(tableName = "store_table")
+
 data class StoreItems(
-    @PrimaryKey
-    @TypeConverters(TypeConverter::class)
     val content: List<Content>,
     val last: Boolean,
     val page: Int,

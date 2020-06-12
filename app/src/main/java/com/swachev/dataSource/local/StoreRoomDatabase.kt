@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.swachev.model.Content
 import com.swachev.model.StoreItemConverter
 import com.swachev.model.StoreItems
 
@@ -12,7 +13,7 @@ import com.swachev.model.StoreItems
 @Database(
     exportSchema = false,
     version = 1,
-    entities = [StoreItems::class])
+    entities = [Content::class])
 @TypeConverters(StoreItemConverter::class)
 abstract class StoreRoomDatabase  : RoomDatabase(){
     abstract fun storeDao(): StoreDao

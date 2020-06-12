@@ -12,12 +12,16 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.swachev.MainActivity
 import com.swachev.R
+import com.swachev.model.Content
 import com.swachev.model.ForYouData
 import com.swachev.model.StoreItems
+import java.io.Serializable
 
-class StoreAdapter(context: Context) :
-    ListAdapter<StoreItems, StoreAdapter.StoreViewHolder>(StoreDiffUtil()){
+class StoreAdapter(context: Context,
+        private val list: List<Content?>?) :
+    RecyclerView.Adapter< StoreAdapter.StoreViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreViewHolder {
         return StoreViewHolder(
@@ -26,40 +30,29 @@ class StoreAdapter(context: Context) :
     }
 
     override fun onBindViewHolder(holder: StoreViewHolder, position: Int) {
-        holder.bind(getItem(position))
-    }
 
+        val item = list!![position]
+       holder.storeName.text = item!!.name
+      holder.storeLocation.text = item.category
 
-    interface OnStoreClickListener{
-        fun OnItemClick(item: StoreItems)
+        holder.itemView.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putSerializable("storeData", item)
+            val navController = Navigation.findNavController(holder.itemView)
+            navController.navigate(R.id.action_navigation_foryou_to_navigation_foryou_Detail, bundle)
+        }
+
     }
 
     class StoreViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val storeName: TextView = itemView.findViewById(R.id.storeName)
-        private  val storeLocation: TextView = itemView.findViewById(R.id.storeLocation)
+        val storeName: TextView = itemView.findViewById(R.id.storeName)
+        val storeLocation: TextView = itemView.findViewById(R.id.storeLocation)
 
-        fun bind(item: StoreItems) = with(itemView) {
-
-            storeName.text = item.content[adapterPosition].name
-            storeLocation.text = item.content[adapterPosition].category
-
-           val bundle = Bundle()
-            val storeData = ForYouData(item, adapterPosition)
-            bundle.putSerializable("storeData", storeData)
-            Navigation.findNavController(itemView).navigate(R.id.action_navigation_foryou_to_navigation_foryou_Detail, bundle)
-        }
     }
 
-    class StoreDiffUtil : DiffUtil.ItemCallback<StoreItems>() {
-
-        override fun areItemsTheSame(oldItem: StoreItems, newItem: StoreItems): Boolean {
-            return oldItem.content == newItem.content
-        }
-
-        override fun areContentsTheSame(oldItem: StoreItems, newItem: StoreItems): Boolean {
-            return oldItem == newItem
-        }
+    override fun getItemCount(): Int {
+        return list!!.count()
     }
 
 }

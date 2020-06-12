@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.swachev.R
 import com.swachev.adapters.StoreAdapter
@@ -27,6 +28,8 @@ class ForYouFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_foryou, container, false)
 
         recyclerView = root.findViewById(R.id.for_you_recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(parentFragment?.context,
+            LinearLayoutManager.VERTICAL, false)
 
         responseMess()
         storeResult()
@@ -54,9 +57,9 @@ class ForYouFragment : Fragment() {
    private fun storeResult(){
         forYouViewModel.getStoresFromLocal().observe(viewLifecycleOwner, Observer {storeItems ->
 
-            val adapter = StoreAdapter(requireContext())
-            adapter.submitList(storeItems)
+            val adapter = StoreAdapter(requireContext(), storeItems)
             recyclerView.adapter = adapter
+            recyclerView.adapter?.notifyDataSetChanged()
 
         })
     }

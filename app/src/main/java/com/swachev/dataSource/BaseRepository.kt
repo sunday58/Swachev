@@ -15,11 +15,11 @@ class BaseRepository(private val api: StoresApi, private val dao: StoreDao):
         return api.getStores()
     }
 
-    override fun getStoreItems(): LiveData<List<StoreItems?>> {
+    override fun getStoreItems(): LiveData<List<Content?>> {
         return dao.getStoreItems()
     }
 
-    override suspend fun setStoreItems(response: StoreItems?) {
+    override suspend fun setStoreItems(response: List<Content>?) {
        return dao.setStoreItems(response)
     }
 }

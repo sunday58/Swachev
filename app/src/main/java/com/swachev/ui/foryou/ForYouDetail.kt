@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 
 import com.swachev.R
 import com.swachev.model.ForYouData
@@ -15,6 +17,7 @@ import com.swachev.model.ForYouData
 class ForYouDetail : Fragment() {
 
     private lateinit var forYouData: ForYouData
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,6 +25,8 @@ class ForYouDetail : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_for_you_detail, container, false)
+
+         navController = Navigation.findNavController(requireView())
 
 
         storeDetailData()

@@ -7,7 +7,7 @@ import com.swachev.dataSource.BaseRepository
 import com.swachev.dataSource.local.StoreDao
 import com.swachev.dataSource.local.StoreRoomDatabase
 import com.swachev.dataSource.remote.RetrofitBuilder
-import com.swachev.dataSource.remote.StoresApi
+import com.swachev.model.Content
 import com.swachev.model.StoreItems
 import com.swachev.utility.Event
 import com.swachev.utility.Result
@@ -27,9 +27,9 @@ class ForYouViewModel(application: Application) : AndroidViewModel(application) 
     private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.IO)
     private val repository: BaseRepository
     private val dao: StoreDao = StoreRoomDatabase.getDatabase(application).storeDao()
-    var responseMessage = MutableLiveData<Event<Result<StoreItems>>>()
+    var responseMessage = MutableLiveData<Event<Result<Content>>>()
     private val _store = MutableLiveData("")
-    private val stores: LiveData<List<StoreItems?>>
+    private val stores: LiveData<List<Content?>>
 
 
     init {
@@ -48,7 +48,7 @@ class ForYouViewModel(application: Application) : AndroidViewModel(application) 
         viewModelJob.cancel()
     }
 
-    fun getStoresFromLocal(): LiveData<List<StoreItems?>> {
+    fun getStoresFromLocal(): LiveData<List<Content?>> {
         return stores
     }
 
@@ -65,7 +65,7 @@ class ForYouViewModel(application: Application) : AndroidViewModel(application) 
         repository.getRemoteStores().enqueue(object : Callback<StoreItems?> {
             override fun onResponse(call: Call<StoreItems?>, response: Response<StoreItems?>) {
                 viewModelScope.launch {
-                    response.body()?.let { repository.setStoreItems(it) }
+                    response.body()?.content.let { repository.setStoreItems(it) }
                 }
                 responseMessage.postValue(
                     Event(

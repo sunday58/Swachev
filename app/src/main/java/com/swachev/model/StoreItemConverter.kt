@@ -8,13 +8,13 @@ import java.lang.reflect.Type
 class StoreItemConverter {
 
     @TypeConverter
-    fun fromString(value: String): List<Content>? {
-        val listType: Type = object: TypeToken<List<Content?>?>() {}.type
-        return Gson().fromJson<List<Content>>(value, listType)
+    fun fromString(value: String): List<Product>? {
+        val listType: Type = object: TypeToken<List<Product?>?>() {}.type
+        return Gson().fromJson<List<Product>>(value, listType)
     }
 
     @TypeConverter
-    fun listToString(list: List<Content?>?): String? {
+    fun listToString(list: List<Product?>?): String? {
         val gson = Gson()
         return gson.toJson(list)
     }
