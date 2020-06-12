@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -35,8 +36,8 @@ class StoreAdapter(context: Context) :
 
     class StoreViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val storeName: TextView = itemView.findViewById(R.id.storeName)
-        val storeLocation: TextView = itemView.findViewById(R.id.storeLocation)
+        private val storeName: TextView = itemView.findViewById(R.id.storeName)
+        private  val storeLocation: TextView = itemView.findViewById(R.id.storeLocation)
 
         fun bind(item: StoreItems) = with(itemView) {
 
@@ -46,6 +47,7 @@ class StoreAdapter(context: Context) :
            val bundle = Bundle()
             val storeData = ForYouData(item, adapterPosition)
             bundle.putSerializable("storeData", storeData)
+            Navigation.findNavController(itemView).navigate(R.id.action_navigation_foryou_to_navigation_foryou_Detail, bundle)
         }
     }
 
@@ -56,7 +58,7 @@ class StoreAdapter(context: Context) :
         }
 
         override fun areContentsTheSame(oldItem: StoreItems, newItem: StoreItems): Boolean {
-            return oldItem.equals(newItem)
+            return oldItem == newItem
         }
     }
 

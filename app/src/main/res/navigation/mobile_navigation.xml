@@ -15,7 +15,11 @@
         android:id="@+id/navigation_foryou"
         android:name="com.swachev.ui.foryou.ForYouFragment"
         android:label="@string/title_foryou"
-        tools:layout="@layout/fragment_foryou" />
+        tools:layout="@layout/fragment_foryou" >
+        <action
+            android:id="@+id/action_navigation_foryou_to_navigation_foryou_Detail"
+            app:destination="@id/navigation_foryou_Detail" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_yourList"
@@ -73,5 +77,10 @@
             android:id="@+id/action_navigation_registerFinish_to_navigation_foryou"
             app:destination="@id/navigation_foryou" />
     </fragment>
+
+    <fragment
+        android:id="@+id/navigation_foryou_Detail"
+        android:name="com.swachev.ui.foryou.ForYouDetail"
+        tools:layout="@layout/fragment_for_you_detail" />
 
 </navigation>
