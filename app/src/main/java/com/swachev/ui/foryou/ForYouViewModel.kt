@@ -27,7 +27,8 @@ class ForYouViewModel(application: Application) : AndroidViewModel(application) 
     private val repository: BaseRepository
     private val dao: StoreDao = StoreRoomDatabase.getDatabase(application).storeDao()
     var responseMessage = MutableLiveData<Event<Result<StoreItems>>>()
-    private val stores: LiveData<StoreItems?>
+    private val _store = MutableLiveData("")
+    private val stores: LiveData<List<StoreItems?>>
 
 
     init {
@@ -36,12 +37,12 @@ class ForYouViewModel(application: Application) : AndroidViewModel(application) 
             dao
         )
         getStoresRemote()
-        stores = Transformations.switchMap(StoreMediatorLiveData(responseMessage)) {
+        stores = Transformations.switchMap(StoreMediatorLiveData(_store)) {
             repository.getStoreItems()
         }
     }
 
-    fun getStoresFromLocal(): LiveData<StoreItems?> {
+    fun getStoresFromLocal(): LiveData<List<StoreItems?>> {
         return stores
     }
 

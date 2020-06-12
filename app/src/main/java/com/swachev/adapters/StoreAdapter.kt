@@ -1,6 +1,8 @@
 package com.swachev.adapters
 
+import android.content.Context
 import android.media.Image
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +12,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.swachev.R
+import com.swachev.model.ForYouData
 import com.swachev.model.StoreItems
 
-class StoreAdapter(private val listener: OnStoreClickListener) :
+class StoreAdapter(context: Context) :
     ListAdapter<StoreItems, StoreAdapter.StoreViewHolder>(StoreDiffUtil()){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreViewHolder {
@@ -22,7 +25,7 @@ class StoreAdapter(private val listener: OnStoreClickListener) :
     }
 
     override fun onBindViewHolder(holder: StoreViewHolder, position: Int) {
-        holder.bind(getItem(position), listener)
+        holder.bind(getItem(position))
     }
 
 
@@ -35,14 +38,14 @@ class StoreAdapter(private val listener: OnStoreClickListener) :
         val storeName: TextView = itemView.findViewById(R.id.storeName)
         val storeLocation: TextView = itemView.findViewById(R.id.storeLocation)
 
-        fun bind(item: StoreItems, listener: OnStoreClickListener) = with(itemView) {
+        fun bind(item: StoreItems) = with(itemView) {
 
             storeName.text = item.content[adapterPosition].name
             storeLocation.text = item.content[adapterPosition].category
 
-            itemView.setOnClickListener {
-                listener.OnItemClick(item)
-            }
+           val bundle = Bundle()
+            val storeData = ForYouData(item, adapterPosition)
+            bundle.putSerializable("storeData", storeData)
         }
     }
 
