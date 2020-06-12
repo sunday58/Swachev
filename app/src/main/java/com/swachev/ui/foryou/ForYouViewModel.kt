@@ -1,6 +1,7 @@
 package com.swachev.ui.foryou
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.*
 import com.swachev.dataSource.BaseRepository
 import com.swachev.dataSource.local.StoreDao
@@ -42,6 +43,11 @@ class ForYouViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
+    }
+
     fun getStoresFromLocal(): LiveData<List<StoreItems?>> {
         return stores
     }
@@ -73,6 +79,7 @@ class ForYouViewModel(application: Application) : AndroidViewModel(application) 
             }
 
             override fun onFailure(call: Call<StoreItems?>, t: Throwable) {
+                Log.d("dataError", t.localizedMessage!!)
                 responseMessage.postValue(
                     Event(
                         Result(
