@@ -38,8 +38,8 @@ class StoreAdapter(context: Context,
         holder.itemView.setOnClickListener {
             val bundle = Bundle()
             bundle.putSerializable("storeData", item)
-            val navController = Navigation.findNavController(holder.itemView)
-            navController.navigate(R.id.action_navigation_foryou_to_navigation_foryou_Detail, bundle)
+//            val navController = Navigation.findNavController(holder.itemView)
+//            navController.navigate(R.id.action_navigation_foryou_to_navigation_foryou_Detail, bundle)
         }
 
     }

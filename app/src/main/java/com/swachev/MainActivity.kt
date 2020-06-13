@@ -81,8 +81,12 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
         if (navController.currentDestination!!.id == R.id.navigation_foryou)
             showDialog()
-        else
+        else if (navController.currentDestination!!.id == R.id.navigation_favorite ||
+            navController.currentDestination!!.id == R.id.navigation_yourList ||
+                navController.currentDestination!!.id == R.id.navigation_profile)
             navController.navigate(R.id.navigation_foryou)
+        else
+            super.onBackPressed()
     }
 
     private fun showDialog() {
