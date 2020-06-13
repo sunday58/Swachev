@@ -10,6 +10,10 @@ to them for purchase. In other to facilitate online purchase a shopping cart
 is provided to the user. The system is implemented using a 2-tier approach,
 with a backend database and an application interface.
 
+This aplication was inspired base on the recent outbreake of disease, the application
+aims at solving the issue of people moving into local stores to buy their daily needs.
+Hence, local store owners can advert their produce using the application and users gets
+to buy things from their own local stores and get it delivered to them very fast and safe.
 
 ![SPLASH SCREEN (1)](https://user-images.githubusercontent.com/46400048/84565137-155aec00-ad5f-11ea-9046-55518dcedb26.png)
 ![CATEGORY](https://user-images.githubusercontent.com/46400048/84565141-1855dc80-ad5f-11ea-8083-867eb4b1798b.png)
@@ -20,3 +24,15 @@ with a backend database and an application interface.
 ![HOME](https://user-images.githubusercontent.com/46400048/84565152-23a90800-ad5f-11ea-8c81-44ad69bd9162.png)
 ![HOME DETAIL](https://user-images.githubusercontent.com/46400048/84565155-260b6200-ad5f-11ea-815d-44a58580df14.png)
 
+
+# Usage
+Download aplication from playstore (still on Build stage)
+Register
+Choose to be a shopper or local business owner
+buy produce from your local shop or sale produce to your local consumers.
+
+# Team
+@sunday58
+
+# Contributions
+We welcome contributions.
