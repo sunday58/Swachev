@@ -33,7 +33,7 @@ class StoreAdapter(context: Context,
 
         val item = list!![position]
        holder.storeName.text = item!!.name
-      holder.storeLocation.text = item.category
+      holder.storeLocation.text = item.address.city
 
         holder.itemView.setOnClickListener {
             val bundle = Bundle()
