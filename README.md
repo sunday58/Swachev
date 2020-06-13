@@ -27,8 +27,11 @@ to buy things from their own local stores and get it delivered to them very fast
 
 # Usage
 Download aplication from playstore (still on Build stage)
+
 Register
+
 Choose to be a shopper or local business owner
+
 buy produce from your local shop or sale produce to your local consumers.
 
 # Team
