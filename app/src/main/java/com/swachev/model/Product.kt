@@ -1,5 +1,7 @@
 package com.swachev.model
 
+import java.io.Serializable
+
 data class Product(
     val attributes: List<Attribute>,
     val category: String,
@@ -8,4 +10,4 @@ data class Product(
     val name: String,
     val rate: Double,
     val unit: String
-)
+):Serializable

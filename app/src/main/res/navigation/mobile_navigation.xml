@@ -83,4 +83,9 @@
         android:name="com.swachev.ui.foryou.ForYouDetail"
         tools:layout="@layout/fragment_for_you_detail" />
 
+    <fragment
+        android:id="@+id/navigation_foryou_itemDetail"
+        android:name="com.swachev.ui.foryou.ForYouItemDetail"
+        tools:layout="@layout/for_you_item_detail_fragment" />
+
 </navigation>

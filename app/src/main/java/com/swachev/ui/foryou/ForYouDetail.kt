@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 
@@ -17,6 +18,7 @@ import com.swachev.model.ForYouData
 class ForYouDetail : Fragment() {
 
     private lateinit var forYouData: ForYouData
+    private lateinit var saleCard: RelativeLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +27,10 @@ class ForYouDetail : Fragment() {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_for_you_detail, container, false)
 
-
+        saleCard = root.findViewById(R.id.saleCard)
+        saleCard.setOnClickListener {
+            Navigation.findNavController(root).navigate(R.id.navigation_foryou_itemDetail)
+        }
 
 
 

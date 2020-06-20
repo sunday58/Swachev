@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                     hideCustomToolBar()
                     showBottomNav()
                 }
-                R.id.navigation_category -> {
+                R.id.navigation_category, R.id.navigation_foryou_Detail, R.id.navigation_foryou_itemDetail -> {
                     hideCustomToolBar()
                     hideBottomNav()
                 }
