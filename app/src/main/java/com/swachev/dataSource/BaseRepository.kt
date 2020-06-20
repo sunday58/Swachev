@@ -6,6 +6,7 @@ import com.swachev.dataSource.local.StoreDao
 import com.swachev.dataSource.remote.RemoteRepository
 import com.swachev.dataSource.remote.StoresApi
 import com.swachev.model.Content
+import com.swachev.model.Product
 import com.swachev.model.StoreItems
 import retrofit2.Call
 
@@ -22,4 +23,5 @@ class BaseRepository(private val api: StoresApi, private val dao: StoreDao):
     override suspend fun setStoreItems(response: List<Content>?) {
        return dao.setStoreItems(response)
     }
+
 }
