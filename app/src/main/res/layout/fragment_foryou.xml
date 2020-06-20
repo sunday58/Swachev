@@ -86,11 +86,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/for_you_recyclerView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="62dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,18 +97,19 @@
         tools:listitem="@layout/for_you_list_item" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/extendedFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|bottom"
         android:layout_marginBottom="68dp"
+        android:fontFamily="@font/roboto"
+        android:text="Filter"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:elevation="8dp"
+        app:icon="@drawable/filter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:backgroundTint="@color/colorPrimaryDark"
-        app:icon="@drawable/filter"
-        android:text="Filter"
-        app:elevation="8dp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/roboto"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

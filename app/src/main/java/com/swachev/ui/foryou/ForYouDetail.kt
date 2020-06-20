@@ -17,7 +17,6 @@ import com.swachev.model.ForYouData
 class ForYouDetail : Fragment() {
 
     private lateinit var forYouData: ForYouData
-    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,10 +25,10 @@ class ForYouDetail : Fragment() {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_for_you_detail, container, false)
 
-         navController = Navigation.findNavController(requireView())
 
 
-        storeDetailData()
+
+
         return root
     }
 
