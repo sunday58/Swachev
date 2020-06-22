@@ -220,6 +220,7 @@
                     android:text="View 10 more" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/foryou_RecyclerViewSeasonal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/foryou_seasonal"
