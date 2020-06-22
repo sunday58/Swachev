@@ -133,6 +133,9 @@
             android:layout_below="@id/foryou_view2"
             android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLength="15"
+            android:singleLine="true"
             android:text="1 Broadway Street..." />
 
         <View

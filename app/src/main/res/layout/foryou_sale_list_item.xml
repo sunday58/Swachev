@@ -28,14 +28,19 @@
         android:layout_below="@id/foryou_saleImage"
         android:layout_marginTop="4dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:textStyle="bold"/>
+
     <TextView
         android:id="@+id/foryou_saleType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fry chicken"
+        android:layout_below="@id/foryou_salePrice"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:layout_below="@id/foryou_salePrice"/>
+        android:ellipsize="end"
+        android:maxLength="13"
+        android:singleLine="true"
+        android:text="Fry chicken" />
 
 </RelativeLayout>
