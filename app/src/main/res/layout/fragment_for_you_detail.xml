@@ -1,288 +1,301 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background"
-    tools:context=".ui.foryou.ForYouDetail">
 
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/white"
-        android:paddingBottom="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/background"
+        tools:context=".ui.foryou.ForYouDetail">
 
-        <ImageView
-            android:id="@+id/go_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:src="@drawable/ic_left_arrow" />
 
-        <TextView
-            android:id="@+id/foryou_companyName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/roboto"
-            android:text="Hasan Cake L.T.D"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold" />
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:paddingBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/foryou_deliveryTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/foryou_companyName"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/roboto"
-            android:text="Delivery in 10001" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/for_you_cart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="8dp"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardBackgroundColor="@color/colorPrimaryDark"
-            app:cardCornerRadius="35dp"
-            app:cardElevation="8dp">
-
-            <TextView
-                android:id="@+id/for_you_item_amount"
+            <ImageView
+                android:id="@+id/go_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:drawableStart="@drawable/ic_shopping_cart"
-                android:drawablePadding="8dp"
+                android:layout_margin="12dp"
+                android:src="@drawable/ic_left_arrow" />
+
+            <TextView
+                android:id="@+id/foryou_companyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/roboto"
-                android:paddingStart="12dp"
-                android:paddingTop="4dp"
-                android:paddingEnd="12dp"
-                android:paddingBottom="4dp"
-                android:text="0"
-                android:textColor="@color/white"
-                android:textSize="20sp"
+                android:text="Hasan Cake L.T.D"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
 
-        </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:id="@+id/foryou_deliveryTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/foryou_companyName"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto"
+                android:text="Delivery in 10001" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/for_you_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardCornerRadius="35dp"
+                app:cardElevation="8dp">
+
+                <TextView
+                    android:id="@+id/for_you_item_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:drawableStart="@drawable/ic_shopping_cart"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:paddingStart="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="4dp"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.card.MaterialCardView>
 
 
-        <EditText
-            android:id="@+id/foryou_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:layout_below="@id/foryou_deliveryTime"
-            android:layout_marginStart="42dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="42dp"
-            android:background="@drawable/edit_text_circle_radius"
-            android:drawableLeft="@drawable/ic_search"
-            android:drawablePadding="16dp"
-            android:focusable="false"
-            android:hint="Search"
-            android:inputType="none"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp" />
+            <EditText
+                android:id="@+id/foryou_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/foryou_deliveryTime"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="42dp"
+                android:background="@drawable/edit_text_circle_radius"
+                android:drawableLeft="@drawable/ic_search"
+                android:drawablePadding="16dp"
+                android:focusable="false"
+                android:hint="Search"
+                android:inputType="none"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
 
-        <View
-            android:id="@+id/foryou_view"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/foryou_search"
-            android:layout_marginTop="16dp"
-            android:background="@color/light_black" />
+            <View
+                android:id="@+id/foryou_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/foryou_search"
+                android:layout_marginTop="16dp"
+                android:background="@color/light_black" />
 
-        <TextView
-            android:id="@+id/foryou_deliverTo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/foryou_view"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/roboto"
-            android:text="Delivery to"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/foryou_deliverTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/foryou_view"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto"
+                android:text="Delivery to"
+                android:textStyle="bold" />
 
-        <View
-            android:id="@+id/foryou_view2"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/foryou_deliverTo"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="16dp"
-            android:background="@color/light_black" />
+            <View
+                android:id="@+id/foryou_view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/foryou_deliverTo"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/light_black" />
 
-        <TextView
-            android:id="@+id/foryou_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/foryou_view2"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="4dp"
-            android:ellipsize="end"
-            android:maxLength="15"
-            android:singleLine="true"
-            android:text="1 Broadway Street..." />
+            <TextView
+                android:id="@+id/foryou_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/foryou_view2"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:maxLength="15"
+                android:singleLine="true"
+                android:text="1 Broadway Street..." />
 
-        <View
-            android:id="@+id/foryou_view3"
-            android:layout_width="1dp"
-            android:layout_height="28dp"
-            android:layout_below="@id/foryou_view2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="16dp"
-            android:background="@color/light_black" />
+            <View
+                android:id="@+id/foryou_view3"
+                android:layout_width="1dp"
+                android:layout_height="23dp"
+                android:layout_below="@id/foryou_view2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/light_black" />
 
-        <TextView
-            android:id="@+id/foryou_deliveryDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/foryou_view2"
-            android:layout_alignParentEnd="true"
-            android:layout_alignEnd="@id/foryou_view3"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="50dp"
-            android:text="Apr 26 - Apr 27" />
+            <TextView
+                android:id="@+id/foryou_deliveryDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/foryou_view2"
+                android:layout_alignEnd="@id/foryou_view3"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="50dp"
+                android:text="Apr 26 - Apr 27" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/foryou_view2"
-            android:layout_alignEnd="@id/foryou_deliveryDate"
-            android:layout_alignParentEnd="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/ic_icons8_info" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/foryou_view2"
+                android:layout_alignEnd="@id/foryou_deliveryDate"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_icons8_info" />
 
-    </RelativeLayout>
+        </RelativeLayout>
 
 
-    <ScrollView
-        android:id="@+id/relativeLayout2"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/background"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
         android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
-        <LinearLayout
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+        <RelativeLayout
+            android:id="@+id/seasonal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="8dp">
+            android:layout_marginTop="18dp"
+            android:background="@color/white"
+            android:paddingBottom="12dp">
 
-            <RelativeLayout
+            <TextView
+                android:id="@+id/foryou_seasonal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/roboto"
+                android:text="Seasonal"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/foryou_moreItems"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:drawableEnd="@drawable/ic_arrow_point_to_right"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:text="View 10 more" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/foryou_RecyclerViewSeasonal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:background="@color/white"
-                android:paddingBottom="12dp">
+                android:layout_below="@id/foryou_seasonal"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:reverseLayout="true"
+                tools:listitem="@layout/foryou_detail_list_item" />
 
-                <TextView
-                    android:id="@+id/foryou_seasonal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="12dp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/roboto"
-                    android:text="Seasonal"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/foryou_moreItems"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="16dp"
-                    android:drawableEnd="@drawable/ic_arrow_point_to_right"
-                    android:drawablePadding="4dp"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="center"
-                    android:text="View 10 more" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/foryou_RecyclerViewSeasonal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/foryou_seasonal"
-                    android:layout_marginTop="12dp"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:reverseLayout="true"
-                    tools:listitem="@layout/foryou_detail_list_item" />
-
-            </RelativeLayout>
+        </RelativeLayout>
 
 
-            <RelativeLayout
-                android:id="@+id/saleCard"
+        <RelativeLayout
+            android:id="@+id/saleCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@color/white"
+            android:layout_below="@id/seasonal"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/foryou_sale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/roboto"
+                android:text="Sale"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/foryou_moreSaleItems"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:drawableEnd="@drawable/ic_arrow_point_to_right"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:text="View 10 more" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/foryou_recyclerViewSale"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginTop="18dp"
-                android:paddingBottom="16dp">
+                android:layout_below="@id/foryou_sale"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:reverseLayout="true"
+                tools:listitem="@layout/foryou_detail_list_item" />
 
-                <TextView
-                    android:id="@+id/foryou_sale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="12dp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/roboto"
-                    android:text="Sale"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/foryou_moreSaleItems"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="16dp"
-                    android:drawableEnd="@drawable/ic_arrow_point_to_right"
-                    android:drawablePadding="4dp"
-                    android:fontFamily="@font/roboto"
-                    android:gravity="center"
-                    android:text="View 10 more" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/foryou_sale"
-                    android:layout_marginTop="12dp"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:reverseLayout="true"
-                    tools:listitem="@layout/foryou_sale_list_item" />
-
-            </RelativeLayout>
+        </RelativeLayout>
 
 
-        </LinearLayout>
+    </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+

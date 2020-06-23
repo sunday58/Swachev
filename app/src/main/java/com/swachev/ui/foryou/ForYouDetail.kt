@@ -44,6 +44,7 @@ class ForYouDetail : Fragment() {
     private lateinit var companyName: TextView
     private lateinit var address: TextView
     private lateinit var recyclerView: RecyclerView
+    private lateinit var saleRecyclerView: RecyclerView
     private lateinit var adapter: StoreDetailAdapter
 
     override fun onCreateView(
@@ -56,6 +57,7 @@ class ForYouDetail : Fragment() {
         companyName = root.findViewById(R.id.foryou_companyName)
         address = root.findViewById(R.id.foryou_address)
         recyclerView = root.findViewById(R.id.foryou_RecyclerViewSeasonal)
+        saleRecyclerView = root.findViewById(R.id.foryou_recyclerViewSale)
 
         saleCard = root.findViewById(R.id.saleCard)
         saleCard.setOnClickListener {
@@ -111,6 +113,7 @@ class ForYouDetail : Fragment() {
             stores.addAll(forYouData.storeItems.products)
             adapter = StoreDetailAdapter(requireContext(), stores)
             recyclerView.adapter = adapter
+            saleRecyclerView.adapter = adapter
             recyclerView.adapter?.notifyDataSetChanged()
         }
     }
