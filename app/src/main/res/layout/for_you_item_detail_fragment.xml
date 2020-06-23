@@ -85,6 +85,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/foryou_itemDetail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -167,6 +168,7 @@
                     android:text="View 10 more" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/foryou_itemRecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/foryou_sale"

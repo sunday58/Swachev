@@ -15,10 +15,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.swachev.MainActivity
 import com.swachev.R
-import com.swachev.model.Content
-import com.swachev.model.ForYouData
-import com.swachev.model.Product
-import com.swachev.model.StoreItems
+import com.swachev.model.*
 import org.w3c.dom.Text
 import java.io.Serializable
 
@@ -41,7 +38,7 @@ class StoreDetailAdapter(context: Context,
 
         holder.itemView.setOnClickListener {
             val bundle = Bundle()
-            bundle.putSerializable("storeData", item)
+            bundle.putSerializable("storeItemData", item)
             Navigation.findNavController(holder.itemView).navigate(R.id.navigation_foryou_itemDetail, bundle)
         }
 
