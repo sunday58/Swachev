@@ -176,7 +176,7 @@
                     android:orientation="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:reverseLayout="true"
-                    tools:listitem="@layout/foryou_sale_list_item" />
+                    tools:listitem="@layout/foryou_detail_list_item" />
 
             </RelativeLayout>
 
@@ -184,7 +184,7 @@
     </ScrollView>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/subtract"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -196,7 +196,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -205,20 +205,21 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/subtract"
+        app:layout_constraintStart_toEndOf="@+id/subtract"
+        app:layout_constraintTop_toTopOf="@+id/subtract" />
 
     <ImageView
+        android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:src="@drawable/ic_plus"
         android:clickable="true"
         android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintBottom_toBottomOf="@+id/quantity"
+        app:layout_constraintStart_toEndOf="@+id/quantity"
+        app:layout_constraintTop_toTopOf="@+id/quantity" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/foryou_cartButton"
