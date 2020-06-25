@@ -81,14 +81,364 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
+
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollableview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:paddingTop="@dimen/activity_margin_content"
+        android:paddingTop="48dp"
         android:paddingBottom="@dimen/activity_margin_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="54dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Swachev Account"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginStart="24dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardElevation="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/history"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp">
+
+                        <ImageView
+                            android:id="@+id/ic_job"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="12dp"
+                            android:src="@drawable/ic_job_search_symbol"/>
+
+                        <TextView
+                            android:id="@+id/order_history"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/ic_job"
+                            android:text="Order History"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_point_to_right"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="16dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/review"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp">
+
+                        <ImageView
+                            android:id="@+id/ic_writting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="12dp"
+                            android:src="@drawable/ic_writing"/>
+
+                        <TextView
+                            android:id="@+id/pending_reviews"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/ic_writting"
+                            android:text="Pending Reviews"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_point_to_right"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="16dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/delivery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp">
+
+                        <ImageView
+                            android:id="@+id/ic_teleworking"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="12dp"
+                            android:src="@drawable/ic_teleworking"/>
+
+                        <TextView
+                            android:id="@+id/delivery_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/ic_teleworking"
+                            android:text="Delivery Address"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_point_to_right"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="16dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/wallet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="16dp">
+
+                        <ImageView
+                            android:id="@+id/ic_wallet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="12dp"
+                            android:src="@drawable/ic_wallet"/>
+
+                        <TextView
+                            android:id="@+id/save_cards"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/ic_wallet"
+                            android:text="Saved Cards"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_point_to_right"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="16dp"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account Settings"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginStart="24dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardElevation="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp">
+
+                        <TextView
+                            android:id="@+id/edit_profile"
+                            android:layout_width="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_height="wrap_content"
+                            android:text="Edit Profile"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_point_to_right"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="16dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/password_change"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp">
+
+                        <TextView
+                            android:id="@+id/change_password"
+                            android:layout_width="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_height="wrap_content"
+                            android:text="Change Password"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_point_to_right"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="16dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp">
+
+                        <TextView
+                            android:id="@+id/loging_out"
+                            android:layout_width="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_height="wrap_content"
+                            android:text="Logout"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_point_to_right"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="16dp"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="App Settings"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginStart="24dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardElevation="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/help"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp">
+
+                        <TextView
+                            android:id="@+id/help_center"
+                            android:layout_width="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_height="wrap_content"
+                            android:text="Help Center"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_point_to_right"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="16dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp">
+
+                        <TextView
+                            android:id="@+id/contact_us"
+                            android:layout_width="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_height="wrap_content"
+                            android:text="Contact Us"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_point_to_right"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="16dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/terms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp">
+
+                        <TextView
+                            android:id="@+id/terms_and_conditions"
+                            android:layout_width="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_height="wrap_content"
+                            android:text="Terms and Conditions"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_point_to_right"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="16dp"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <RelativeLayout
         android:id="@+id/sub_imageLayout"
@@ -118,6 +468,12 @@
 
     </RelativeLayout>
 
-
+    <ImageView
+        android:id="@+id/select_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_camera_enhance_24"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
