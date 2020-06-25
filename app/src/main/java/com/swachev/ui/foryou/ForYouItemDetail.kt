@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.makeramen.roundedimageview.RoundedImageView
@@ -46,7 +47,7 @@ class ForYouItemDetail : Fragment() {
     private lateinit var quantity: TextView
 
     var stores = ArrayList<Product>()
-    var numItems = 0
+    var numItems = 2
 
     companion object {
         fun newInstance() = ForYouItemDetail()
@@ -87,17 +88,21 @@ class ForYouItemDetail : Fragment() {
 
     private fun produceCount(){
             add.setOnClickListener {
-               val addItems = numItems++
-                quantity.text = addItems.toString()
+               numItems += 1
+                quantity.text = numItems.toString()
             }
             subtract.setOnClickListener {
-              val  minusItem = numItems--
-                if (minusItem == -1) {
-                    Toast.makeText(requireContext(), "item can't be minus", Toast.LENGTH_SHORT)
+                if (numItems == 1) {
+                    Toast.makeText(requireContext(), "item cant be zero", Toast.LENGTH_SHORT)
                         .show()
-                    quantity.text = numItems.toString()
-                }else
-                quantity.text = minusItem.toString()
+                    quantity.text = "0"
+                    return@setOnClickListener
+
+                }
+                numItems -= 1
+                quantity.text = numItems.toString()
+
+
             }
 
     }
