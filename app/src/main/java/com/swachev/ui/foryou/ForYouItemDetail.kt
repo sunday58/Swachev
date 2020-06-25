@@ -47,7 +47,7 @@ class ForYouItemDetail : Fragment() {
     private lateinit var quantity: TextView
 
     var stores = ArrayList<Product>()
-    var numItems = 2
+    var numItems = 1
 
     companion object {
         fun newInstance() = ForYouItemDetail()
@@ -95,7 +95,6 @@ class ForYouItemDetail : Fragment() {
                 if (numItems == 1) {
                     Toast.makeText(requireContext(), "item cant be zero", Toast.LENGTH_SHORT)
                         .show()
-                    quantity.text = "0"
                     return@setOnClickListener
 
                 }

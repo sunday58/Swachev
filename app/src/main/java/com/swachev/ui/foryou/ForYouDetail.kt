@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 
@@ -34,11 +35,11 @@ import retrofit2.Response
  */
 class ForYouDetail : Fragment() {
 
-    var stores = ArrayList<Product>()
+   private var stores = ArrayList<Product>()
 
     private lateinit var forYouData: ForYouData
-    private lateinit var saleCard: RelativeLayout
     private lateinit var companyName: TextView
+    private lateinit var goBack: ImageView
     private lateinit var address: TextView
     private lateinit var recyclerView: RecyclerView
     private lateinit var saleRecyclerView: RecyclerView
@@ -55,13 +56,13 @@ class ForYouDetail : Fragment() {
         address = root.findViewById(R.id.foryou_address)
         recyclerView = root.findViewById(R.id.foryou_RecyclerViewSeasonal)
         saleRecyclerView = root.findViewById(R.id.foryou_recyclerViewSale)
+        goBack = root.findViewById(R.id.go_back)
 
-        saleCard = root.findViewById(R.id.saleCard)
-        saleCard.setOnClickListener {
-            Navigation.findNavController(root).navigate(R.id.navigation_foryou_itemDetail)
+
+        //goBack
+        goBack.setOnClickListener {
+            Navigation.findNavController(root).navigate(R.id.navigation_foryou)
         }
-
-
         storeDetailData()
         return root
     }
