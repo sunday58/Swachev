@@ -39,8 +39,8 @@ class StoreItemDetailAdapter(context: Context,
 
     class StoreViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val storeDetailPrice: TextView = itemView.findViewById(R.id.yourList_producePrice)
-        val storeDetailType: TextView = itemView.findViewById(R.id.yourList_produceType)
+        val storeDetailPrice: TextView = itemView.findViewById(R.id.foryou_producePrice)
+        val storeDetailType: TextView = itemView.findViewById(R.id.foryou_produceType)
 
     }
 
