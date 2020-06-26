@@ -43,7 +43,6 @@ class YourListViewModel(application: Application) : AndroidViewModel(application
     fun getStoresFromLocal(): LiveData<List<Product?>> {
         return stores
     }
-
     private fun getStoresRemote(){
         responseMessage.postValue(
             Event(
@@ -58,7 +57,7 @@ class YourListViewModel(application: Application) : AndroidViewModel(application
             override fun onResponse(call: Call<StoreItems?>, response: Response<StoreItems?>) {
                 viewModelScope.launch {
                     stores.value = response.body()!!.content[1].products
-                    Log.d("YourList ", "${response.body()!!.content[1].products.let { stores }}")
+                    Log.d("YourList ", "${response.body()!!.content[1].products.let { stores.value }}")
                 }
                 responseMessage.postValue(
                     Event(
