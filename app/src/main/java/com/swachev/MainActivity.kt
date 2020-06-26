@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             val dest = resources.getResourceName(destination.id)
 
             when (destination.id) {
-                R.id.navigation_foryou -> {
+                R.id.navigation_foryou, R.id.navigation_yourList -> {
                     hideCustomToolBar()
                     showBottomNav()
                 }

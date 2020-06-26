@@ -8,27 +8,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import android.widget.TextView
 
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import com.swachev.R
-import com.swachev.adapters.StoreAdapter
 import com.swachev.adapters.StoreDetailAdapter
-import com.swachev.dataSource.remote.RetrofitBuilder
-import com.swachev.model.Content
 import com.swachev.model.ForYouData
 import com.swachev.model.Product
-import com.swachev.model.StoreItems
-import com.swachev.utility.Event
-import com.swachev.utility.Result
-import com.swachev.utility.State
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 /**
  * A simple [Fragment] subclass.
@@ -52,7 +40,7 @@ class ForYouDetail : Fragment() {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_for_you_detail, container, false)
 
-        companyName = root.findViewById(R.id.foryou_companyName)
+        companyName = root.findViewById(R.id.foryou_CompanyName)
         address = root.findViewById(R.id.foryou_address)
         recyclerView = root.findViewById(R.id.foryou_RecyclerViewSeasonal)
         saleRecyclerView = root.findViewById(R.id.foryou_recyclerViewSale)

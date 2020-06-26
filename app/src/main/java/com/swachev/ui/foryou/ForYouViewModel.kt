@@ -66,6 +66,7 @@ class ForYouViewModel(application: Application) : AndroidViewModel(application) 
             override fun onResponse(call: Call<StoreItems?>, response: Response<StoreItems?>) {
                 viewModelScope.launch {
                     response.body()?.content.let { repository.setStoreItems(it) }
+                    Log.d("ForYou ", "${response.body()?.content.let { repository.setStoreItems(it) }}")
                 }
                 responseMessage.postValue(
                     Event(

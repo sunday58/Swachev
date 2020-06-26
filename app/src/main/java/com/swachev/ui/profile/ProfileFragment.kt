@@ -21,6 +21,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
 import com.google.android.material.appbar.CollapsingToolbarLayout
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.swachev.R
 import java.util.jar.Manifest
 
@@ -40,6 +41,7 @@ class ProfileFragment : Fragment() {
     private lateinit var selectPic: ImageView
     private lateinit var header: ImageView
     private lateinit var selectHeader: ImageView
+    private lateinit var saveImage: FloatingActionButton
     private var appBarExpanded = true
     private val PERMISSION_CODE_READ = 101
     private val PERMISSION_CODE_WRITE = 102
@@ -59,6 +61,7 @@ class ProfileFragment : Fragment() {
         selectPic = root.findViewById(R.id.select_pic)
         header = root.findViewById(R.id.header)
         selectHeader = root.findViewById(R.id.select_header)
+        saveImage = root.findViewById(R.id.save_image)
 
         collapsingToolbar = root.findViewById(R.id.collapsing_toolbar);
 
@@ -69,6 +72,7 @@ class ProfileFragment : Fragment() {
                 subImageView.isVisible = true
                 layoutName.text = "Profile"
                 selectHeader.isVisible = false
+                saveImage.isVisible = false
             }else{
                 appBarExpanded = true
                 layout.isVisible = true
@@ -103,6 +107,7 @@ class ProfileFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
             header.setImageURI(data?.data)
+            saveImage.isVisible = true
         }
     }
 

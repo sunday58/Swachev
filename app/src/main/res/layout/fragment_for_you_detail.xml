@@ -28,7 +28,7 @@
                 android:src="@drawable/ic_left_arrow" />
 
             <TextView
-                android:id="@+id/foryou_companyName"
+                android:id="@+id/foryou_CompanyName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -42,13 +42,13 @@
                 android:id="@+id/foryou_deliveryTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/foryou_companyName"
+                android:layout_below="@id/foryou_CompanyName"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/roboto"
                 android:text="Delivery in 10001" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/for_you_cart"
+                android:id="@+id/foryou_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -61,7 +61,7 @@
                 app:cardElevation="8dp">
 
                 <TextView
-                    android:id="@+id/for_you_item_amount"
+                    android:id="@+id/foryou_ItemAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -208,7 +208,7 @@
             android:paddingBottom="12dp">
 
             <TextView
-                android:id="@+id/foryou_seasonal"
+                android:id="@+id/yourList_seasonal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -235,7 +235,7 @@
                 android:id="@+id/foryou_RecyclerViewSeasonal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/foryou_seasonal"
+                android:layout_below="@id/yourList_seasonal"
                 android:layout_marginTop="12dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -266,7 +266,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/foryou_moreSaleItems"
+                android:id="@+id/foryou_moreSalesItems"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"

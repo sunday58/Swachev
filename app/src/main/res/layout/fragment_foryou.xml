@@ -18,7 +18,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/for_you_search"
@@ -43,12 +43,12 @@
                 android:paddingEnd="16dp"
                 android:text="Delhi, India"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/for_you_cart"
+                app:layout_constraintEnd_toStartOf="@+id/foryou_cart"
                 app:layout_constraintStart_toEndOf="@+id/for_you_search"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/for_you_cart"
+                android:id="@+id/foryou_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -63,7 +63,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/for_you_item_amount"
+                    android:id="@+id/foryou_ItemAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"

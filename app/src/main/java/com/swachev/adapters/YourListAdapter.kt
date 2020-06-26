@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.swachev.R
 import com.swachev.model.*
 
-class StoreDetailAdapter(context: Context,
-                         private val list: List<Product?>?) :
-    RecyclerView.Adapter< StoreDetailAdapter.StoreViewHolder>(){
+class YourListAdapter(context: Context,
+                      private val list: List<Product?>?) :
+    RecyclerView.Adapter< YourListAdapter.StoreViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreViewHolder {
         return StoreViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.foryou_detail_list_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.your_list_detail_list_item, parent, false)
         )
     }
 
@@ -39,8 +39,8 @@ class StoreDetailAdapter(context: Context,
 
     class StoreViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val storeDetailPrice: TextView = itemView.findViewById(R.id.foryou_producePrice)
-        val storeDetailType: TextView = itemView.findViewById(R.id.foryou_produceType)
+        val storeDetailPrice: TextView = itemView.findViewById(R.id.yourList_producePrice)
+        val storeDetailType: TextView = itemView.findViewById(R.id.yourList_produceType)
 
     }
 

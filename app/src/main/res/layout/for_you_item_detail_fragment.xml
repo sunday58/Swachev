@@ -155,7 +155,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/foryou_moreSaleItems"
+                    android:id="@+id/foryou_moreSalesItems"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"

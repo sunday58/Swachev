@@ -2,22 +2,15 @@ package com.swachev.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.media.Image
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.swachev.MainActivity
 import com.swachev.R
 import com.swachev.model.*
-import org.w3c.dom.Text
-import java.io.Serializable
 
 class StoreItemDetailAdapter(context: Context,
                              private val list: List<Product?>?) :
@@ -46,8 +39,8 @@ class StoreItemDetailAdapter(context: Context,
 
     class StoreViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val storeDetailPrice: TextView = itemView.findViewById(R.id.foryou_producePrice)
-        val storeDetailType: TextView = itemView.findViewById(R.id.foryou_produceType)
+        val storeDetailPrice: TextView = itemView.findViewById(R.id.yourList_producePrice)
+        val storeDetailType: TextView = itemView.findViewById(R.id.yourList_produceType)
 
     }
 
