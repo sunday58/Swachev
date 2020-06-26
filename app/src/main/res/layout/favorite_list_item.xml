@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    android:layout_marginStart="42dp"
+    android:layout_marginEnd="42dp"
+    android:layout_marginTop="12dp"
+    app:cardCornerRadius="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/favorite_produceImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:riv_corner_radius="15dp"
+            android:src="@drawable/produce"/>
+
+        <TextView
+            android:id="@+id/favorite_producePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$16.5/kg"
+            android:layout_toEndOf="@id/favorite_produceImage"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="42dp"
+            android:fontFamily="@font/roboto"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/favorite_produceType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fry Chicken"
+            android:layout_below="@id/favorite_producePrice"
+            android:layout_toEndOf="@id/favorite_produceImage"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="42dp"
+            android:fontFamily="@font/roboto"/>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
