@@ -86,6 +86,7 @@ class ProfileFragment : Fragment() {
         //select pictures
         selectHeader.setOnClickListener {
             checkPermissionForImage()
+            saveImage.isVisible = true
         }
 
         return root
@@ -107,7 +108,6 @@ class ProfileFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
             header.setImageURI(data?.data)
-            saveImage.isVisible = true
         }
     }
 

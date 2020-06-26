@@ -1,6 +1,7 @@
 package com.swachev.ui.foryou
 
 import android.annotation.SuppressLint
+import android.content.Context
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.util.Log
@@ -15,6 +16,7 @@ import androidx.core.view.isVisible
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.makeramen.roundedimageview.RoundedImageView
+import com.swachev.MainActivity
 import com.swachev.R
 import com.swachev.adapters.StoreDetailAdapter
 import com.swachev.adapters.StoreItemDetailAdapter
@@ -26,6 +28,10 @@ import com.swachev.model.StoreItems
 import com.swachev.utility.Event
 import com.swachev.utility.Result
 import com.swachev.utility.State
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -40,11 +46,12 @@ class ForYouItemDetail : Fragment() {
     private lateinit var itemDetail: TextView
     private lateinit var itemImage: RoundedImageView
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: StoreItemDetailAdapter
+    private  var adapter: StoreItemDetailAdapter? = null
     private lateinit var close: ImageView
     private lateinit var subtract : ImageView
     private lateinit var add: ImageView
     private lateinit var quantity: TextView
+
 
     var stores = ArrayList<Product>()
     var numItems = 1
@@ -93,15 +100,13 @@ class ForYouItemDetail : Fragment() {
             }
             subtract.setOnClickListener {
                 if (numItems == 1) {
-                    Toast.makeText(requireContext(), "item cant be zero", Toast.LENGTH_SHORT)
+                    Toast.makeText(activity?.applicationContext, "item cant be zero", Toast.LENGTH_SHORT)
                         .show()
                     return@setOnClickListener
 
                 }
                 numItems -= 1
                 quantity.text = numItems.toString()
-
-
             }
 
     }
@@ -112,11 +117,10 @@ class ForYouItemDetail : Fragment() {
             override fun onResponse(call: Call<StoreItems>, response: Response<StoreItems>) {
 
                 stores.clear()
-                stores.addAll(response.body()!!.content[1].products )
-                 adapter = StoreItemDetailAdapter(requireContext(), stores)
-                recyclerView.adapter = adapter
-                recyclerView.adapter?.notifyDataSetChanged()
-
+                    stores.addAll(response.body()!!.content[1].products )
+                    adapter = StoreItemDetailAdapter(context!!.applicationContext, stores)
+                    recyclerView.adapter = adapter
+                    recyclerView.adapter?.notifyDataSetChanged()
             }
 
             override fun onFailure(call: Call<StoreItems>, t: Throwable) {
