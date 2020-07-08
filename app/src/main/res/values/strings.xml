@@ -27,5 +27,7 @@
     <string name="payment_methods">Payment Methods</string>
     <string name="skip_and_set_up_later">Skip and set up later</string>
     <string name="let_s_start">Let\'s start!</string>
+    <string name="BusinessRegister">Business Name</string>
+    <string name="Business_loc">Business Location</string>
 
 </resources>
