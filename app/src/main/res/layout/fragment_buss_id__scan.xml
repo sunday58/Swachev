@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.Buss_id_Scan"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="350dp">
+
+</ImageView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_margin="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:text="Scan your ID document"
+        android:textColor="@color/design_default_color_on_secondary" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="A 60 seconds timer is going to start \nPlease make sure that all information is within the borders of the scanner"
+        android:textColor="@color/design_default_color_on_secondary" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buss_start_identification"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:textAllCaps="false"
+        android:text="@string/start_identity"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        style="@style/MyButton"
+        android:textColor="@color/white"
+        android:elevation="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/colorPrimaryDark"/>
+
+</LinearLayout>

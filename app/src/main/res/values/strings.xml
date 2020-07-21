@@ -14,6 +14,7 @@
     <string name="password">Password</string>
     <string name="login">LogIn</string>
     <string name="or">OR</string>
+    <string name="start_identity">Start Identification</string>
     <string name="full_name">Full Name</string>
     <string name="email">Email</string>
     <string name="next">Next</string>

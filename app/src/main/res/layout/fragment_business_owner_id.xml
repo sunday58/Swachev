@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.BusinessOwnerId"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/id_bus"
+        android:layout_gravity="center_horizontal" />
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:layout_marginTop="40dp"
+    android:textSize="20sp"
+    android:text="Get ID document ready"
+    android:textStyle="bold"
+    android:gravity="center_horizontal"
+    android:textColor="@color/design_default_color_on_secondary"
+    />
+    <TextView
+        android:layout_width="match_parent"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:layout_height="30sp"
+        android:layout_marginTop="20dp"
+        android:text="Before you start, make your"
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:layout_height="30sp"
+        android:text="passport, driver's license is with you"
+
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:text="will need to scan it during the process"
+
+        android:gravity="center_horizontal"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next_id"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="@string/next"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        style="@style/MyButton"
+        android:textColor="@color/white"
+        android:elevation="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/colorPrimaryDark"/>
+
+</LinearLayout>
